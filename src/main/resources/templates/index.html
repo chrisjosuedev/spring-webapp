@@ -8,5 +8,23 @@
 <body>
     <h1> Hello, Spring! </h1>
     <p>My first Spring Web Server! :)</p>
+    <!-- Show info @ModelAttribute ("users") -->
+    <table th:if="${!users.isEmpty()}" border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+    <!-- FOR EACH -->
+    <tr th:each="user : ${users}">
+      <td th:text="${user.name}"></td>
+      <td th:text="${user.lastName}"></td>
+      <td th:text="${user.email}"></td>
+    </tr>
+    </tbody>
+  </table>
 </body>
 </html>
