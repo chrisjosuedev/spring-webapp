@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+</head>
+<body>
+    <h1>User Info</h1>
+    <p th:text="${user.name}"></p>
+    <p th:text="${user.lastName}"></p>
+    <!-- IF/ELSE with Thymeleaf -->
+    <p th:if="${user.email}" th:text="${user.email}"></p>
+    <p th:if="${user.email == null}">User doesn't have an email registered.</p>
+</body>
+</html>

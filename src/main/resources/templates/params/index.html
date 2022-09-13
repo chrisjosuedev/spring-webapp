@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Params Request HTTP</title>
+</head>
+<body>
+    <h1> Send Params from Request HTTP - GET </h1>
+    <h2> A Data type params only </h2>
+    <ul>
+        <li>
+            <a th:href="@{/params/string/(text='Hello, world!')}" target="_blank">/params/string?text=Hello, world!</a>
+        </li>
+        <li>
+            <a th:href="@{/params/string/(text='Sending params!')}" target="_blank">/params/string?text=Sending params</a>
+        </li>
+    </ul>
+    <h2> Various Data type Params</h2>
+    <ul>
+        <li>
+            <a th:href="@{/params/mix-params(greeting='Hello, I am a String', number=32)}" target="_blank">
+                /params/mix-params/greeting?text=Hello, I am a String&number=32
+            </a>
+        </li>
+    </ul>
+    <h2> Various Data type Params with Request.</h2>
+    <ul>
+        <li>
+            <a th:href="@{/params/mix-params-request(greeting='Hello, I am a String', number=32)}" target="_blank">
+                /params/mix-params-request/greeting?text=Hello, I am a String&number=32
+            </a>
+        </li>
+    </ul>
+</body>
+</html>
