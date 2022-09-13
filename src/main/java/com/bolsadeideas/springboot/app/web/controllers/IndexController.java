@@ -1,6 +1,7 @@
 package com.bolsadeideas.springboot.app.web.controllers;
 
 import com.bolsadeideas.springboot.app.web.models.User;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,11 +17,16 @@ import java.util.List;
 @RequestMapping("/app")
 public class IndexController {
 
+    // Assign to indexText variable from text.indexcontroller.index.title in application.properties
+    @Value("${text.indexcontroller.index.title}")
+    private String indexText;
+
+
     // Second Level Route, Ej -> /app/...routes...
     @GetMapping({ "/", "", "/index"})
     public String index(Model model) {
         // Pass Data to View -> Model (Interface)
-        model.addAttribute("title", "Spring Web App");
+        model.addAttribute("title", indexText);
         // Returns Views Name -> resources/templates/index.html
         return "index";
     }

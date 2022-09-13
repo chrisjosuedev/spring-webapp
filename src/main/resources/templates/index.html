@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8" />
     <!-- th: Variable: text: Parameter from Controller. -->
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
     <title th:text="${title}"></title>
 </head>
 <body>
-    <h1> Hello, Spring! </h1>
-    <p>My first Spring Web Server! :)</p>
+    <h1 class="color-rojo"> Hello, Spring! </h1>
+    <h2 class="color-azul">My first Spring Web Server! :)</h2>
+    <p th:text="${title}"></p>
+    <img th:src="@{/img/github.jpg}" alt="photo" width="200px">
     <!-- Show info @ModelAttribute ("users") -->
     <table th:if="${!users.isEmpty()}" border="1">
     <thead>
